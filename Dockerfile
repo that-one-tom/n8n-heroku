@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 
 # pass N8N_VERSION Argument while building or use default
-ARG N8N_VERSION=0.170.0
+ARG N8N_VERSION=latest
 
 # Update everything and install needed dependencies
 RUN apk add --update graphicsmagick tzdata git tini su-exec
@@ -22,7 +22,6 @@ RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
 	fc-cache -f && \
 	apk del fonts && \
 	find  /usr/share/fonts/truetype/msttcorefonts/ -type l -exec unlink {} \;
-
 
 # Specifying work directory
 WORKDIR /data
