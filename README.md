@@ -1,7 +1,5 @@
 # n8n-heroku
 
-![Docker](https://github.com/sarveshpro/n8n-heroku/workflows/Docker/badge.svg) ![Heroku](https://github.com/sarveshpro/n8n-heroku/workflows/Heroku/badge.svg)
-
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ### n8n - Free and open fair-code licensed node based Workflow Automation Tool.

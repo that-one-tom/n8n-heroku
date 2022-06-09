@@ -8,7 +8,7 @@
     ],
     "website": "https://n8n.io",
     "repository": "https://github.com/sarveshwarge/n8n-heroku",
-    "logo": "https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png",
+    "logo": "https://raw.githubusercontent.com/that-one-tom/n8n-heroku/enable-user-management/n8n_logo.png",
     "success_url": "/",
     "stack": "container",
     "env": {
@@ -37,11 +37,11 @@
         "value": "require"
       },
       "NODE_TLS_REJECT_UNAUTHORIZED": {
-        "description": "Because Heroku SSL is self signed, SSL fails if this is not set to 0",
+        "description": "Because Heroku's SSL certificate is self signed, SSL connections fail if this is not set to 0.",
         "value": "0"
       },
       "WEBHOOK_URL": {
-        "description": "Your app could be published to any domain, without specifying n8n will think that it's hosted on localhost (and it could break some scenarions ",
+        "description": "Replace <appname> with your Heroku application name. This will ensure the correct webhook URLs are being shown in n8n.",
         "value": "https://<appname>.herokuapp.com"
       }
     },
