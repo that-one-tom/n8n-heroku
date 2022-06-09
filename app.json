@@ -13,7 +13,7 @@
     "stack": "container",
     "env": {
       "N8N_BASIC_AUTH_ACTIVE": {
-        "description": "Protect n8n setup with basic authentication.",
+        "description": "Protect n8n setup with basic authentication. Change to `false` if you want to use n8n's user management functionality instead.",
         "value": "true"
       },
       "GENERIC_TIMEZONE": {
@@ -21,7 +21,7 @@
         "value": "Europe/Berlin"
       },
       "N8N_BASIC_AUTH_USER": {
-        "description": "Basic Authentication User for n8n",
+        "description": "Basic Authentication User for n8n.",
         "value": "user"
       },
       "N8N_BASIC_AUTH_PASSWORD": {
@@ -29,7 +29,7 @@
         "value": "pass"
       },
       "N8N_ENCRYPTION_KEY": {
-        "description": "This is to set the n8n encryption key to a static value, so that heroku doesnt override it, causing AUTH to fail",
+        "description": "Set the n8n encryption key to a static value (otherwise Heroku will override it on the next dyno restart, causing authentication to fail).",
         "value": "MdRRn2jiZuVeh5tI77A6"
       },
       "PGSSLMODE": {
@@ -38,7 +38,7 @@
       },
       "NODE_TLS_REJECT_UNAUTHORIZED": {
         "description": "Because Heroku SSL is self signed, SSL fails if this is not set to 0",
-        "value": 0
+        "value": "0"
       },
       "WEBHOOK_URL": {
         "description": "Your app could be published to any domain, without specifying n8n will think that it's hosted on localhost (and it could break some scenarions ",

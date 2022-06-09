@@ -4,16 +4,25 @@ FROM node:lts-alpine
 ARG N8N_VERSION=0.170.0
 
 # Update everything and install needed dependencies
-RUN apk add --update graphicsmagick tzdata
+RUN apk add --update graphicsmagick tzdata git tini su-exec
 
 # Set a custom user to not have n8n run as root
 USER root
 
 # Install n8n and the also temporary all the packages
 # it needs to build it correctly.
-RUN apk --update add --virtual build-dependencies python3 build-base && \
-	npm_config_user=root npm install -g n8n@${N8N_VERSION} && \
+RUN apk --update add --virtual build-dependencies python3 build-base ca-certificates && \
+	npm config set python "$(which python3)" && \
+	npm_config_user=root npm install -g full-icu n8n@${N8N_VERSION} && \
 	apk del build-dependencies
+
+# Install fonts
+RUN apk --no-cache add --virtual fonts msttcorefonts-installer fontconfig && \
+	update-ms-fonts && \
+	fc-cache -f && \
+	apk del fonts && \
+	find  /usr/share/fonts/truetype/msttcorefonts/ -type l -exec unlink {} \;
+
 
 # Specifying work directory
 WORKDIR /data
