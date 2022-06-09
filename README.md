@@ -13,3 +13,17 @@ The default credentials for basic authentication is `user:pass`, but you should 
 #### Enabling User Management
 
 The default configuration enables basic auth as a fast and simple way to authenticate n8n users. If you prefer the more advanced user management functionality of n8n, add the variables from [this guide](https://docs.n8n.io/hosting/user-management/) to your [Heroku config vars](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard).
+
+#### Updating n8n
+
+This requires the Heroku CLI as well as Git to be installed. You can find instructions [here](https://devcenter.heroku.com/articles/git#prerequisites-install-git-and-the-heroku-cli).
+
+To run the upgrade, open a terminal and enter the below commands:
+
+```
+git clone https://github.com/that-one-tom/n8n-heroku.git
+cd n8n-heroku
+
+# TODO: enable-user-management is the current working branch. Change command to `git push heroku main` once everything is merged into main.
+git push heroku enable-user-management:main 
+```
