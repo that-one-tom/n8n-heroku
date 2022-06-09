@@ -6,8 +6,6 @@
 
 ### n8n - Free and open fair-code licensed node based Workflow Automation Tool.
 
-#### [ Open Source Contributors: Maintainers wanted! ]
-
 This is a [Heroku](https://heroku.com/) focused container implementation of [n8n](https://n8n.io/).
 
 Use the Deploy button above to launch n8n on Heroku. When deploying, make sure to check all configuration options and adjust them to your needs. It's especially important to set `N8N_ENCRYPTION_KEY` to a random secure value.
