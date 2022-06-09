@@ -1,6 +1,6 @@
 # n8n-heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/that-one-tom/n8n-heroku/tree/main)
 
 ### n8n - Free and open fair-code licensed node based Workflow Automation Tool.
 
