@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # check if port variable is set or go with default
-if [ -z ${PORT+x} ]; then echo "PORT variable not defined, leaving N8N to default port."; else export N8N_PORT=$PORT; echo "N8N will start on '$PORT'"; fi
+if [ -z ${PORT+x} ]; then echo "PORT variable not defined, leaving n8n to default port."; else export N8N_PORT=$PORT; echo "n8n will start on '$PORT'"; fi
 
 # regex function
 parse_url() {
@@ -17,12 +17,6 @@ then
     ARG_URL=$DATABASE_URL
 	echo $DATABASE_URL;
 	echo "postgres config detected"
-
-elif [ "$MONGODB_URI" ]
-then 
-    ARG_URL=$MONGODB_URI
-	echo "mongo config detected"
-
 else
     echo "no config vars found"
 fi
@@ -49,17 +43,10 @@ then
 	export DB_POSTGRESDB_PORT=$N8N_DB_PORT
 	export DB_POSTGRESDB_DATABASE=$N8N_DB_DATABASE
 	export DB_POSTGRESDB_USER=$N8N_DB_USER
-	export DB_POSTGRESDB_PASSWORD=$N8N_DB_PASSWORD
-
-elif [ $N8N_DB_SCHEME == 'mongodb' ]
-then
-    echo "indentified DB in use mongoDB"
-	export DB_TYPE=mongodb
-	export DB_MONGODB_CONNECTION_URL=$ARG_URL
-	
+	export DB_POSTGRESDB_PASSWORD=$N8N_DB_PASSWORD	
 else
 	echo "invalid url arg"
 fi
 
-# kickstart nodemation
+# kickstart n8n
 n8n
