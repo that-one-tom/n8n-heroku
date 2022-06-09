@@ -23,7 +23,7 @@ To run the upgrade, open a terminal and enter the below commands:
 ```
 git clone https://github.com/that-one-tom/n8n-heroku.git
 cd n8n-heroku
-
-# TODO: enable-user-management is the current working branch. Change command to `git push heroku main` once everything is merged into main.
-git push heroku enable-user-management:main 
+git push heroku main 
 ```
+
+If you have previously updated n8n, you can skip the `git clone` command.
