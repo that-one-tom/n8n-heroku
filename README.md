@@ -23,7 +23,8 @@ To run the upgrade, open a terminal and enter the below commands:
 ```
 git clone https://github.com/that-one-tom/n8n-heroku.git
 cd n8n-heroku
+heroku git:remote -a appname # Replace app name with the actual name of your app
 git push heroku main 
 ```
 
-If you have previously updated n8n, you can skip the `git clone` command.
+If you have previously updated n8n, you can skip both the `git clone` and `heroku git:remote` commands.
